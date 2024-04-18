@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let longitude = geocodingResult['results'][0]['position']['lon'];
             let latitude = geocodingResult['results'][0]['position']['lat'];
 
-            return fetch('https://pulsaidapi.onrender.com/api/v1/emergencies', {
+            return fetch('https://api.pulsaid.be/api/v1/emergencies', {
                 method: 'POST',
                 mode: 'cors', 
                 headers: {
