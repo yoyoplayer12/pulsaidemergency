@@ -1,57 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulsaid</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Oproep Registratie - Hulpdienstencentrale</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 0;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 150px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
 </head>
 <body>
-
-    
-<header>
-    <div class="img-container">
-        <img src="https://firebasestorage.googleapis.com/v0/b/pulsaid-ffc8b.appspot.com/o/112%2Flogo.svg?alt=media&token=a082044e-b12a-4fa2-a1d8-1d6bae3cbb4c&fbclid=IwAR0m_v52leaAW2shmuwaXIAU_MRSyPel7_36vDqZXcg15QQtvIj6DxctdsI" alt="Pulsaid logo">
-    </div>
-</header>
-<main>
-    <h1>Pulsaid - hulp sturen</h1>
-    <p>Voor onze hulpverleners naar de locatie te sturen vragen we je de latitude en longitude in te vullen</p>
-    <form action="" method="">
-    <div class="success" style="display: none;">
-        <p>Bedankt voor je hulpverzoek, we sturen zo snel mogelijk hulp</p>
-    </div>
-    <div class="error" style="display: none;">
-        <p>Er is iets misgegaan, probeer het opnieuw</p>
-    </div>
-        <div class="form-group-container">
-            <div class="form-group">
-                <label for="latitude">latitude</label>
-                <input type="number" class="latitude" name="latitude" placeholder="Latitude">
+    <header>
+        <h1>Oproep Registratie - Hulpdienstencentrale</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form>
+                        <h2 class="text-center mb-4">Oproep Registratie</h2>
+                        <div class="form-group">
+                            <label for="callerName">Naam van beller:</label>
+                            <input type="text" id="callerName" name="callerName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="callerNumber">Telefoonnummer van beller:</label>
+                            <input type="text" id="callerNumber" name="callerNumber" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="callLocation">Locatie van oproep:</label>
+                            <input type="text" id="callLocation" name="callLocation" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="callType">Type oproep:</label>
+                            <select id="callType" name="callType" class="form-control">
+                                <option value="medisch">Medisch</option>
+                                <option value="brand">Brand</option>
+                                <option value="politie">Politie</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="callDescription">Omschrijving van oproep:</label>
+                            <textarea id="callDescription" name="callDescription" class="form-control" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input typee="button" value="Sla op" class="btn btn-primary btn-block" readonly>
+                            <input type="submit" value="Verstuur naar pulsaid" class="btn btn-primary btn-block">
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="longitude">longitude</label>
-                <input type="number" class="longitude" name="longitude" placeholder="Longitude">
-            </div>  
         </div>
-        <div class="form-group">
-            <label for="extraInfo">extra info</label>
-            <textarea name="extraInfo" class="extraInfo" placeholder="Extra info"></textarea>
-        </div>
-        <button type="submit" class="submit">Verstuur <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14.2878 6.94914L1.77238 12.2184C1.50314 12.3261 1.24737 12.3033 1.00505 12.1501C0.762751 11.9969 0.641602 11.7754 0.641602 11.4857V0.908738C0.641602 0.619005 0.762751 0.39753 1.00505 0.244313C1.24737 0.0911128 1.50314 0.0683633 1.77238 0.176063L14.2878 5.44529C14.6147 5.59016 14.7782 5.8408 14.7782 6.19721C14.7782 6.55363 14.6147 6.80427 14.2878 6.94914ZM1.6416 11.1972L13.4916 6.19721L1.6416 1.19721V5.08184L6.48775 6.19721L1.6416 7.31259V11.1972Z" fill="#EDEEF6"/>
-            </svg>
-            </button>
-    </form>
-
-</main>
-    
+    </main>
 </body>
-
-
-<script type="module" src="main.js"></script>
-
 </html>
 
-
+<script src="main.js"></script>
